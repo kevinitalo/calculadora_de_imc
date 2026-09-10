@@ -34,3 +34,5 @@ while True:
     tecla = input("Pressione a tecla 'X' para sair...")
     if tecla.upper() == 'X':
         break
+
+# TODO: ajustar validação de altura
