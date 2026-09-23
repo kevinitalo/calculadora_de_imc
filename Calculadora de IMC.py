@@ -13,11 +13,18 @@ while True:
             peso = peso.replace(",", ".")
         peso = float(peso)
 
-    altura = float(input("altura (m): "))
+    altura = input("altura (m): ")
+
+    if "," in altura:
+        altura = altura.replace(",", ".")
+    altura = float(altura)
 
     while altura <= 0:
-            print("Altura inválida. Por favor, insira um valor maior que zero.")
-            altura = float(input("altura (m): "))
+        print("Altura inválida. Por favor, insira um valor maior que zero.")
+        altura = input("altura (m): ")
+        if "," in altura:
+            altura = altura.replace(",", ".")
+        altura = float(altura)
 
     imc = peso / (altura ** 2)
     print(f"IMC: {imc:.1f}")
@@ -34,5 +41,3 @@ while True:
     tecla = input("Pressione a tecla 'X' para sair...")
     if tecla.upper() == 'X':
         break
-
-# TODO: ajustar validação de altura
